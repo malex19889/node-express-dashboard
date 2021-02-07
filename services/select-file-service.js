@@ -7,8 +7,8 @@ const dir = process.cwd();
 function getDirectoryContents(files, currentDir, query) {
     const data = [];
 
-    files.forEach(file => {
-        if(isDirectory(files,currentDir)){
+    files.forEach((file) => {
+        if(isDirectory(currentDir, file)){
             data.push({name: file, isDirectory: true, path: path.join(query, file)})
         }else{
             data.push({name: file, isDirectory: false, path: path.join(query, file),currentDir})
@@ -18,7 +18,7 @@ function getDirectoryContents(files, currentDir, query) {
 }
 
 function isDirectory(currentDir, file) {
-   let fileInfo = fs.statSync(path.join(currentDir + file));
+   const fileInfo = fs.statSync(path.join(currentDir, file));
    return fileInfo.isDirectory();
 }
 
