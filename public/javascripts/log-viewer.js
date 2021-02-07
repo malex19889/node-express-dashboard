@@ -7,7 +7,6 @@ connection.onopen = () => {
     if(filePath){
         connection.send(filePath)
     }
-    connection.send("Hello from the client! No Filepath");
 }
 
 connection.onmessage = (event) => {
