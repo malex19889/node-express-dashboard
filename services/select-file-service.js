@@ -33,10 +33,10 @@ function readDir(currentDir, res, query) {
 }
 
 exports.get = (req, res) => {
-    let currentdir = dir;
+    let currentDir = dir;
     const query = req.query.path || "";
     if(query){
-        currentdir = path.join(currentdir,query);
+        currentDir = path.join(currentDir,query);
     }
-    readDir(currentdir, res, query);
+    readDir(currentDir, res, query);
 };
